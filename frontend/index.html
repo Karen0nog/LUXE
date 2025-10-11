@@ -20,22 +20,18 @@
         <nav class="navbar navbar-expand-md custom-navbar" id="mainNavbar">
             <div class="container-fluid container-lg px-4">
                 <!-- Logo -->
-                <a class="navbar-brand d-flex align-items-center me-auto me-md-4" href="#"
-                    onclick="navigate('home'); return false;">
+                <a class="navbar-brand d-flex align-items-center me-auto me-md-4" href="#">
                     <div class="logo-circle me-2">
                         <span>L</span>
                     </div>
-                    <span class="fs-4 fw-light text-uppercase tracking-wider" style="letter-spacing: 2px;">LUXE</span>
+                    <span class="fs-4 fw-light text-uppercase tracking-wider">LUXE</span>
                 </a>
-
-                <!-- Menu Mobile -->
+                <!-- Menu -->
                 <button class="d-md-none p-2 ms-3 icon-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mobileMenuContainer" aria-controls="mobileMenuContainer" aria-expanded="false"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation" id="mobileMenuToggle">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
-
-                <!-- Ícones -->
                 <div class="d-flex align-items-center order-md-last">
                     <button class="btn icon-btn p-2 me-2" aria-label="Buscar Produto">
                         <i class="fas fa-search"></i>
@@ -46,48 +42,141 @@
                     </button>
                 </div>
 
-                <!-- Menu Desktop -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom nav-link-active" href="#"
-                                onclick="navigate('home'); return false;" data-page="home">Home</a>
+                            <a class="nav-link nav-link-custom nav-link-active" href="#" data-page="home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#" onclick="navigate('catalog'); return false;"
-                                data-page="catalog">Catálogo</a>
+                            <a class="nav-link nav-link-custom" href="#" data-page="catalog">Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#" onclick="navigate('about'); return false;"
-                                data-page="about">Sobre</a>
+                            <a class="nav-link nav-link-custom" href="#" data-page="about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#" onclick="navigate('contact'); return false;"
-                                data-page="contact">Contato</a>
+                            <a class="nav-link nav-link-custom" href="#" data-page="contact">Contato</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </section>
+        <main id="main-content">
+            <section id="homePageContent" class="container-fluid p-0">
 
-    <!-- Container para o Menu Mobile (Fora do Navbar principal para controle de estilo) -->
-    <div class="collapse d-md-none mobile-menu" id="mobileMenuContainer">
-        <div class="container px-4 py-3">
-            <a class="mobile-menu-item nav-link-active d-block" href="#" onclick="navigateMobile('home'); return false;"
-                data-page="home">Home</a>
-            <a class="mobile-menu-item d-block" href="#" onclick="navigateMobile('catalog'); return false;"
-                data-page="catalog">Catálogo</a>
-            <a class="mobile-menu-item d-block" href="#" onclick="navigateMobile('about'); return false;"
-                data-page="about">Sobre</a>
-            <a class="mobile-menu-item d-block" href="#" onclick="navigateMobile('contact'); return false;"
-                data-page="contact">Contato</a>
-        </div>
-    </div>
+                <!-- Hero Section -->
+                <section class="hero-section position-relative">
+                    <div class="hero-background">
+                        <img src="./assets/img/relogio(4).jpg" alt="Relógio Conceitual de Luxo">
+                    </div>
+                    <div class="container-lg h-100 d-flex align-items-center px-4">
+                        <div class="hero-content mx-auto mx-md-0 text-center text-md-start">
+                            <h1 class="hero-title mb-3">
+                                Coleção de Luxo 2025
+                            </h1>
+                            <p class="hero-subtitle mb-4">
+                                Relógios conceituais que definem elegância e precisão
+                            </p>
+                            <a href="#" class="btn btn-lg text-white rounded-pill shadow-lg">
+                                Ver Coleção <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+                <!-- 2. Destaques -->
+                <section class="container-lg py-5 py-md-5 px-4">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3">Mais Vendidos</h2>
+                        <p class="muted-text mx-auto">
+                            Descubra nossa seleção exclusiva de relógios de luxo, cada um criado com atenção excepcional
+                            aos detalhes
+                        </p>
+                    </div>
+
+                    <!-- Grid de Produtos em Destaque  -->
+                    <div class="row g-4" id="featuredProductsContainer">
+                        <!-- Produtos Destaques Injetados Aqui -->
+                        <div class="col-12 text-center text-muted" id="featuredLoadingMessage">Carregando destaques...
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-lg btn-outline-dark rounded-pill border-2">
+                            Ver Todos os Produtos
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 3. Benefícios -->
+                <section class="bg-light py-5 py-md-5">
+                    <div class="container-lg px-4">
+                        <div class="row g-5">
+
+                            <!-- Precisão -->
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon-container mb-3">
+                                    <i class="fas fa-clock feature-icon"></i>
+                                </div>
+                                <h3 class="h4">Precisão Suíça</h3>
+                                <p class="muted-text">
+                                    Movimentos automáticos de alta precisão com certificação internacional
+                                </p>
+                            </div>
+
+                            <!-- Garantia -->
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon-container mb-3">
+                                    <i class="fas fa-shield-alt feature-icon"></i>
+                                </div>
+                                <h3 class="h4">Garantia Estendida</h3>
+                                <p class="muted-text">
+                                    Até 5 anos de garantia internacional em modelos selecionados
+                                </p>
+                            </div>
+
+                            <!-- Exclusividade -->
+                            <div class="col-md-4 text-center">
+                                <div class="feature-icon-container mb-3">
+                                    <i class="fas fa-gem feature-icon"></i>
+                                </div>
+                                <h3 class="h4">Exclusividade</h3>
+                                <p class="muted-text">
+                                    Peças únicas e edições limitadas para colecionadores exigentes
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+            <!-- CATALOG PAGE CONTENT (Escondido por Padrão) -->
+            <section id="catalogPageContent" class="container-lg my-5 px-4 d-none">
+                <h1 class="mb-4">Catálogo de Produtos</h1>
+                <p class="lead muted-text">Descubra a arte da precisão em nossos designs exclusivos, com imagens geradas
+                    por IA.</p>
+
+                <!-- Área de Filtros e Busca (A ser implementada em próxima etapa) -->
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control rounded-pill" placeholder="Buscar relógio por nome...">
+                    </div>
+                </div>
+
+                <!-- Grid de Produtos do Catálogo -->
+                <div class="row g-4 mt-3" id="catalogProductsContainer">
+                    <!-- Produtos do Catálogo Injetados Aqui -->
+                    <div class="col-12 text-center text-muted" id="catalogLoadingMessage">Carregando todos os produtos
+                        da API...</div>
+                </div>
+            </section>
+
+            <!-- Placeholder para outras páginas (Sobre/Contato) -->
+
+        </main>
+
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/main.js"></script>
 </body>
 
 </html>

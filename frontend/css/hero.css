@@ -1,0 +1,192 @@
+.hero-section {
+  position: relative;
+  height: 600px;
+  background-color: var(--main-bg-color);
+  color: var(--white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  filter: saturate(0.95) contrast(1.06) brightness(0.56);
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.98;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(10, 12, 14, 0.3) 0%,
+    rgba(10, 12, 14, 0.36) 60%,
+    rgba(10, 12, 14, 0.26) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+  text-shadow: var(--text-shadow-strong);
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted-text);
+  margin-bottom: 1.25rem;
+  max-width: 36rem;
+  opacity: 0.95;
+}
+
+.hero-content .btn.btn-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 26px rgba(6, 8, 10, 0.28);
+  transition: transform 180ms ease, box-shadow 200ms ease, background 160ms ease;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+}
+.hero-content .btn.btn-lg:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(6, 8, 10, 0.34);
+}
+.hero-content .btn.btn-lg:active {
+  transform: translateY(-1px) scale(0.997);
+}
+
+.hero-content .btn .fa-arrow-right {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.92rem;
+  transition: transform 200ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    background 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 4px 12px rgba(6, 8, 10, 0.18);
+}
+.hero-content .btn:hover .fa-arrow-right {
+  transform: translateX(6px) scale(1.03);
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 10px 26px rgba(6, 8, 10, 0.2);
+}
+
+.muted-text {
+  color: var(--muted-text);
+}
+
+.featured-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(180deg, var(--silver-100), var(--silver-200));
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(10, 12, 14, 0.06);
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(6, 8, 10, 0.08);
+}
+
+/* Precisão, Garantia, Exclusividade */
+
+.feature-icon-container {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: linear-gradient(
+    135deg,
+    var(--silver-400, #bfc6cc),
+    var(--silver-200, #e6eaec)
+  );
+  box-shadow: 0 6px 18px rgba(10, 12, 14, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(0) scale(1);
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 260ms cubic-bezier(0.2, 0.9, 0.3, 1), border-color 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+.feature-icon-container:hover,
+.feature-icon-container:focus-within,
+.feature-icon-container:focus {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 14px 36px rgba(10, 12, 14, 0.1),
+    0 6px 20px rgba(123, 97, 255, 0.06);
+  border-color: rgba(123, 97, 255, 0.12);
+}
+.feature-icon-container:hover::after,
+.feature-icon-container:focus-within::after,
+.feature-icon-container:focus::after {
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .hero-section {
+    height: 700px;
+    padding: 4rem;
+  }
+  .hero-title {
+    font-size: 3.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}

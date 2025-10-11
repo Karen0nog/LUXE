@@ -1,17 +1,46 @@
 @import url("./header.css");
+@import url("./hero.css");
 
 :root {
-    --main-bg-color: #f5f5f5;        
-    --secondary-bg-color: #eceff1;   
-    --main-text-color: #22262a;      
-    --accent-color: #b4b6b8;         
-    --accent-contrast: #0f1720;      
-    --primary-shadow: 0 4px 12px rgba(15, 23, 32, 0.06);
-    --secondary-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    --nav-link-padding: 0.4rem 0.75rem;
-    --primary-border: rgba(255, 255, 255, 0.1);
-    --secondary-border: rgba(255, 255, 255, 0.5);
-    --white: #ffffff;
+--white: #ffffff;
+--main-bg-color: #f5f5f5;
+--secondary-bg-color: #eceff1;
+--main-text-color: #22262a;
+--muted-text: rgba(230,235,238,0.9);
+--accent-color: #b4b6b8;
+--accent-contrast: #0f1720;
+--accent-10: rgba(180, 182, 184, 0.08);
+--brand-gray: #a0a4a8;
+
+--silver-100: #f5f7f8;
+--silver-200: #e6eaec;
+--silver-300: #d1d7db;
+--silver-400: #bfc6cc;
+--silver-500: #9aa1a6;
+--silver-600: #7d8489;
+--silver-700: #5c6165;
+
+--text-shadow: 0 6px 18px rgba(15, 23, 32, 0.25);
+--text-shadow-strong: 0 8px 22px rgba(8,10,12,0.65);
+--primary-shadow: 0 4px 12px rgba(15, 23, 32, 0.06);
+--secondary-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+--card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--hero-overlay: rgba(15, 23, 32, 0.45);
+--hero-overlay-dark: rgba(12,14,16,0.66);
+--hero-overlay-mid: rgba(28,32,36,0.44);
+
+--primary-border: rgba(255, 255, 255, 0.1);
+--secondary-border: rgba(255, 255, 255, 0.5);
+--hero-cta-border: rgba(255,255,255,0.45);
+
+--background-primary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
+--background-secondary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
+--hero-cta-bg: linear-gradient(180deg, var(--silver-100), var(--silver-300));
+--hero-cta-hover: linear-gradient(180deg, #ffffff, var(--silver-200));
+
+--nav-link-padding: 0.4rem 0.75rem;
+--hero-cta-color: #0b0b0b;
+
 }
 
 * {
@@ -24,5 +53,12 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-bg-color);
   font-family: var(--bs-body-font-family);
+  min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
