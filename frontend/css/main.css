@@ -1,0 +1,28 @@
+@import url("./header.css");
+
+:root {
+    --main-bg-color: #f5f5f5;        
+    --secondary-bg-color: #eceff1;   
+    --main-text-color: #22262a;      
+    --accent-color: #b4b6b8;         
+    --accent-contrast: #0f1720;      
+    --primary-shadow: 0 4px 12px rgba(15, 23, 32, 0.06);
+    --secondary-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    --nav-link-padding: 0.4rem 0.75rem;
+    --primary-border: rgba(255, 255, 255, 0.1);
+    --secondary-border: rgba(255, 255, 255, 0.5);
+    --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-bg-color);
+  font-family: var(--bs-body-font-family);
+}
+

@@ -1,0 +1,123 @@
+.custom-navbar {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  box-shadow: var(--primary-shadow);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand .logo-circle {
+  background-color: var(--accent-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent-contrast);
+}
+
+.nav-link-custom {
+  color: var(--main-text-color);
+  padding: var(--nav-link-padding);
+  transition: color 0.3s;
+  border-radius: 0.3rem;
+}
+
+.nav-link-custom:hover {
+  color: var(--accent-color);
+}
+
+.nav-link-active {
+  color: var(--accent-color) !important;
+  font-weight: 500;
+
+}
+
+.icon-btn {
+  color: var(--main-text-color);
+  transition: color 0.3s;
+  position: relative; 
+}
+.icon-btn:hover {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.cart-badge {
+  background-color: var(--accent-color);
+  color: var(--white);
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  box-shadow: var(--secondary-shadow);
+  border: 2px solid var(--main-bg-color);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+  background-color: var(--secondary-bg-color);
+  border-top: 1px solid var(--primary-border);
+}
+.mobile-menu-item {
+  color: var(--main-text-color);
+  padding: 10px 15px;
+  text-align: left;
+  transition: background-color 0.3s;
+  border-radius: 0.3rem;
+}
+.mobile-menu-item:hover {
+  background-color: var(--secondary-border);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link-custom {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-brand .logo-circle {
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-badge {
+    top: -5px;
+    right: -5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-navbar {
+    padding: 0.5rem;
+  }
+
+  .nav-link-custom {
+    font-size: 0.9rem;
+  }
+
+  .cart-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+}
