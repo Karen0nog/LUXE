@@ -1,7 +1,6 @@
 .hero-section {
   position: relative;
   height: 600px;
-  background-color: var(--main-bg-color);
   color: var(--white);
   overflow: hidden;
   display: flex;
@@ -55,7 +54,7 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--muted-text);
+  color: var(--white);
   margin-bottom: 1.25rem;
   max-width: 36rem;
   opacity: 0.95;
@@ -66,13 +65,14 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.85rem 1.25rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--background);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 26px rgba(6, 8, 10, 0.28);
   transition: transform 180ms ease, box-shadow 200ms ease, background 160ms ease;
   backdrop-filter: blur(4px);
   text-decoration: none;
+  border: 1px solid var(--white);
 }
 .hero-content .btn.btn-lg:hover {
   transform: translateY(-3px);
@@ -91,12 +91,13 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--background);
   color: #fff;
   font-size: 0.92rem;
   transition: transform 200ms cubic-bezier(0.2, 0.9, 0.3, 1),
     background 180ms ease, box-shadow 180ms ease;
   box-shadow: 0 4px 12px rgba(6, 8, 10, 0.18);
+  border: 1px solid var(--white);
 }
 .hero-content .btn:hover .fa-arrow-right {
   transform: translateX(6px) scale(1.03);
@@ -105,7 +106,7 @@
 }
 
 .muted-text {
-  color: var(--muted-text);
+  color: black;
 }
 
 .featured-card {
@@ -125,8 +126,8 @@
 /* Precisão, Garantia, Exclusividade */
 
 .feature-icon-container {
-  width: 88px;
-  height: 88px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -137,26 +138,14 @@
     var(--silver-400, #bfc6cc),
     var(--silver-200, #e6eaec)
   );
-  box-shadow: 0 6px 18px rgba(10, 12, 14, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 18px var(--background),
+    inset 0 1px 0 var(--);
   transform: translateY(0) scale(1);
   transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
     box-shadow 260ms cubic-bezier(0.2, 0.9, 0.3, 1), border-color 200ms ease;
   position: relative;
   overflow: hidden;
-}
-.feature-icon-container:hover,
-.feature-icon-container:focus-within,
-.feature-icon-container:focus {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 14px 36px rgba(10, 12, 14, 0.1),
-    0 6px 20px rgba(123, 97, 255, 0.06);
-  border-color: rgba(123, 97, 255, 0.12);
-}
-.feature-icon-container:hover::after,
-.feature-icon-container:focus-within::after,
-.feature-icon-container:focus::after {
-  opacity: 1;
+  
 }
 
 /* Responsividade */

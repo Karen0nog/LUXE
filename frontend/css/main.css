@@ -1,17 +1,18 @@
 @import url("./header.css");
 @import url("./hero.css");
+@import url("./footer.css");
 
 :root {
 --white: #ffffff;
 --main-bg-color: #f5f5f5;
+--footer-bg-color: #0f1720;
 --secondary-bg-color: #eceff1;
 --main-text-color: #22262a;
---muted-text: rgba(230,235,238,0.9);
+--muted-text: rgba(0, 3, 5, 0.9);
 --accent-color: #b4b6b8;
 --accent-contrast: #0f1720;
 --accent-10: rgba(180, 182, 184, 0.08);
 --brand-gray: #a0a4a8;
-
 --silver-100: #f5f7f8;
 --silver-200: #e6eaec;
 --silver-300: #d1d7db;
@@ -33,10 +34,12 @@
 --secondary-border: rgba(255, 255, 255, 0.5);
 --hero-cta-border: rgba(255,255,255,0.45);
 
+--background:rgba(255, 255, 255, 0.08);
 --background-primary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
 --background-secondary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
 --hero-cta-bg: linear-gradient(180deg, var(--silver-100), var(--silver-300));
 --hero-cta-hover: linear-gradient(180deg, #ffffff, var(--silver-200));
+
 
 --nav-link-padding: 0.4rem 0.75rem;
 --hero-cta-color: #0b0b0b;
