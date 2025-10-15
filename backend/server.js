@@ -4,12 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = 3000;
-
-// --- Middleware ---
-app.use(cors()); 
-app.use(express.json());
-
+const PORT = process.env.PORT || 3000;
 // --- Conexão com o MongoDB Atlas ---
 const DB_URI = process.env.DB_URI;
 
@@ -18,24 +13,13 @@ if (!DB_URI) {
   process.exit(1);
 }
 
-mongoose
-  .connect(DB_URI)
-  .then(() => {
-    console.log("Conectado com sucesso ao MongoDB");
-  })
-  .catch((error) => {
-    console.error("Erro ao conectar ao MongoDB", error.message);
-  });
+// --- Middleware ---
+app.use(cors());
+app.use(express.json());
 
-  mongoose.connection.on("connected", () => {
-  console.log("Mongoose: conexão estabelecida.");
-});
-mongoose.connection.on("error", (err) => {
-  console.error("Mongoose: erro de conexão:", err);
-});
-mongoose.connection.on("disconnected", () => {
-  console.warn("Mongoose: desconectado.");
-});
+// ---- Configuração do Express ---
+const frontendPath = path.join(__dirname, "..", "frontend");
+app.use(express.static(frontendPath));
 
 // Schema para especificações
 const SpecificationSchema = new mongoose.Schema(
@@ -63,23 +47,14 @@ const ProdutoSchema = new mongoose.Schema(
 
 const Produto = mongoose.model("Produto", ProdutoSchema);
 
-// ---- Configuração do Express ---
-const frontendPath = path.join(__dirname, "..", "frontend");
-app.use(express.static(frontendPath));
-
-// Rota Raiz
+// Rotas
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 app.get("/api/produtos", async (req, res) => {
-  console.log("Requisição recebida para /api/produtos");
   try {
-    const produtos = await Produto.find();
-    if (produtos.length === 0) {
-      console.warn("Nenhum produto encontrado no banco de dados.");
-    }
-    console.log("Produtos encontrados:", produtos);
+    const produtos = await Produto.find().lean();
     res.status(200).json(produtos);
   } catch (error) {
     console.error("Erro ao buscar produtos no DB:", error);
@@ -88,10 +63,62 @@ app.get("/api/produtos", async (req, res) => {
       error: error.message,
     });
   }
-
 });
 
-// Inicia o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+async function startServer() {
+  try {
+    // Conecta ao MongoDB usando a variável de ambiente DB_URI
+    await mongoose.connect(DB_URI);
+    console.log("Conectado ao MongoDB.");
+
+    // --- Inserir dados de exemplo se a coleção estiver vazia (apenas para desenvolvimento) ---
+    // Só roda o seed quando não for ambiente de produção
+    if (process.env.NODE_ENV !== 'production') {
+      const count = await Produto.countDocuments();
+      if (count === 0) {
+        
+        const exemplos = [
+          {
+            name: "Relógio Conceito A",
+            price: 1299.00,
+            image: "/assets/img/relogio(1).jpg",
+            category: "Clássico",
+            dialColor: "Preto",
+            material: "Aço inox",
+            description: "Relógio conceito A — exemplar de design minimalista.",
+            specifications: [{ label: "Resistência", value: "5 ATM" }]
+          },
+          {
+            name: "Relógio Conceito B",
+            price: 1899.00,
+            image: "/assets/img/relogio(2).jpg",
+            category: "Esportivo",
+            dialColor: "Azul",
+            material: "Titânio",
+            description: "Relógio conceito B — robusto e elegante.",
+            specifications: [{ label: "Movimento", value: "Automático" }]
+          }
+        ];
+
+        try {
+          await Produto.insertMany(exemplos);
+          
+        } catch (seedErr) {
+          // Logamos o erro do seed, mas não abortamos o servidor para facilitar desenvolvimento.
+          console.error('Erro ao inserir dados de exemplo:', seedErr);
+        }
+      }
+    }
+    // -------------------------------------------------------------------------------
+
+    // Inicia o servidor Express
+    app.listen(PORT, () => {
+      console.log(`Servidor rodando em http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error("Erro ao conectar ao MongoDB:", err.message);
+    process.exit(1);
+  }
+}
+
+startServer();
