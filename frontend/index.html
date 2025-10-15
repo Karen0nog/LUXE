@@ -45,10 +45,12 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom nav-link-active" href="#" data-page="home">Home</a>
+                            <a class="nav-link nav-link-custom nav-link-active" href="index.html"
+                                data-page="home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#" data-page="catalog">Catálogo</a>
+                            <a class="nav-link nav-link-custom" href="/catalogo"
+                                data-page="catalog">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-custom" href="#" data-page="about">Sobre</a>
@@ -125,69 +127,47 @@
                 </section>
             </section>
 
-                <!-- 2. MAIS VENDIDOS -->
-                <section class="container-lg py-5 px-4">
-                    <div class="text-center mb-5">
-                        <h2 class="mb-3">Mais Vendidos</h2>
-                        <p class="muted-text mx-auto text-black">
-                            Descubra nossa seleção exclusiva de relógios de luxo, criados com atenção excepcional aos
-                            detalhes.
-                        </p>
-                    </div>
-
-                    <!-- Grid de Produtos em Destaque -->
-                    <div class="row g-4" id="featuredProductsContainer">
-                        <div class="col-6 col-md-4 col-lg-3 catalog-card" data-name="Nome do Relógio">
-                            <div class="card product-card h-100 border-0 shadow-sm">
-                                <img src="./assets/img/relogio(1).jpg" class="card-img-top" alt="Nome do Relógio"
-                                    loading="lazy">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Nome do Relógio</h5>
-                                    <p class="text-muted small mb-2">Categoria</p>
-                                    <div class="d-flex justify-content-between align-items-center mt-auto">
-                                        <span class="fw-bold fs-5">R$ 9.999,00</span>
-                                        <div class="text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="1">
-                                    <i class="fas fa-shopping-cart me-2"></i> Adicionar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-4">
-                        <a href="/api/produtos" class="btn btn-lg btn-outline-dark rounded-pill border-2" data-page="catalog">
-                            Ver Todos os Produtos
-                        </a>
-                    </div>
-                </section>
-
-                
-
-            <!-- CATÁLOGO DE PRODUTOS -->
-            <section id="catalogPageContent" class="container-lg my-5 px-4">
-                <h1 class="mb-4">Catálogo de Produtos</h1>
-                <p class="lead muted-text">Descubra a arte da precisão em nossos designs exclusivos, com imagens geradas
-                    por IA.</p>
-
-                <!-- Área de Filtros e Busca (A ser implementada em próxima etapa) -->
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control rounded-pill" placeholder="Buscar relógio por nome...">
-                    </div>
+            <!-- 2. MAIS VENDIDOS -->
+            <section class="container-lg py-5 px-4">
+                <div class="text-center mb-5">
+                    <h2 class="mb-3">Mais Vendidos</h2>
+                    <p class="muted-text mx-auto text-black">
+                        Descubra nossa seleção exclusiva de relógios de luxo, criados com atenção excepcional aos
+                        detalhes.
+                    </p>
                 </div>
 
-                <!-- Grid de Produtos do Catálogo -->
-                <div class="row g-4 mt-3 catalogo-container" id="catalogProductsContainer">
-                    <!-- Produtos do Catálogo Injetados Aqui -->
-                    <div class="col-12 text-center text-muted" id="catalogLoadingMessage">Carregando todos os produtos
-                        da API...</div>
+                <!-- Grid de Produtos em Destaque -->
+                <div class="row g-4" id="featuredProductsContainer">
+                    <div class="col-6 col-md-4 col-lg-3 catalog-card" data-name="Nome do Relógio">
+                        <div class="card product-card h-100 border-0 shadow-sm">
+                            <img src="./assets/img/relogio(1).jpg" class="card-img-top" alt="Nome do Relógio"
+                                loading="lazy">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Nome do Relógio</h5>
+                                <p class="text-muted small mb-2">Categoria</p>
+                                <div class="d-flex justify-content-between align-items-center mt-auto">
+                                    <span class="fw-bold fs-5">R$ 9.999,00</span>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="1">
+                                <i class="fas fa-shopping-cart me-2"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="/api/produtos" class="btn btn-lg btn-outline-dark rounded-pill border-2"
+                        data-page="catalog">
+                        Ver Todos os Produtos
+                    </a>
                 </div>
             </section>
         </main>
@@ -214,9 +194,7 @@
                         <h4 class="h5 mb-4 fw-bold">Links Úteis</h4>
                         <div class="d-flex flex-column" style="gap: 8px;">
                             <a href="#" class="footer-link">Sobre Nós</a>
-                            <a href="#" class="footer-link">Catálogo</a>
-                            <a href="#" class="footer-link">Coleções</a>
-                            <a href="#" class="footer-link">Blog</a>
+                            <a href="/catalogo" class="footer-link">Catálogo</a>
                         </div>
                     </div>
 
@@ -266,6 +244,7 @@
         <!-- Bootstrap JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script type="module" src="./js/main.js"></script>
+
 </body>
 
 </html>
