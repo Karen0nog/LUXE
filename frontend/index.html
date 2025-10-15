@@ -76,53 +76,10 @@
                             <p class="hero-subtitle mb-4">
                                 Relógios conceituais que definem elegância e precisão
                             </p>
-                            <a href="#" class="btn btn-lg text-white rounded-pill shadow-lg">
+                            <a href="#catalogPageContent" class="btn btn-lg text-white rounded-pill shadow-lg">
                                 Ver Coleção <i class="fas fa-arrow-right ms-2"></i>
                             </a>
                         </div>
-                    </div>
-                </section>
-
-                <!-- 2. Destaques -->
-                <section class="container-lg py-5 px-4">
-                    <div class="text-center mb-5">
-                        <h2 class="mb-3">Mais Vendidos</h2>
-                        <p class="muted-text mx-auto text-black">
-                            Descubra nossa seleção exclusiva de relógios de luxo, criados com atenção excepcional aos
-                            detalhes.
-                        </p>
-                    </div>
-
-                    <!-- Grid de Produtos em Destaque -->
-                    <div class="row g-4" id="featuredProductsContainer">
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="card product-card h-100 border-0 shadow-sm">
-                                <img src="./assets/img/relogio(1).jpg" class="card-img-top" alt="Nome do Relógio"
-                                    loading="lazy">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">Nome do Relógio</h5>
-                                    <p class="text-muted small mb-2">Categoria</p>
-                                    <div class="d-flex justify-content-between align-items-center mt-auto">
-                                        <span class="fw-bold fs-5">R$ 9.999,00</span>
-                                        <div class="text-warning">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="1">
-                                    <i class="fas fa-shopping-cart me-2"></i> Adicionar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-4">
-                        <a href="/api/produtos" class="btn btn-lg btn-outline-dark rounded-pill border-2" data-page="catalog">
-                            Ver Todos os Produtos
-                        </a>
                     </div>
                 </section>
 
@@ -168,7 +125,52 @@
                 </section>
             </section>
 
-            <!-- Catálogo de Produtos -->
+                <!-- 2. MAIS VENDIDOS -->
+                <section class="container-lg py-5 px-4">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3">Mais Vendidos</h2>
+                        <p class="muted-text mx-auto text-black">
+                            Descubra nossa seleção exclusiva de relógios de luxo, criados com atenção excepcional aos
+                            detalhes.
+                        </p>
+                    </div>
+
+                    <!-- Grid de Produtos em Destaque -->
+                    <div class="row g-4" id="featuredProductsContainer">
+                        <div class="col-6 col-md-4 col-lg-3 catalog-card" data-name="Nome do Relógio">
+                            <div class="card product-card h-100 border-0 shadow-sm">
+                                <img src="./assets/img/relogio(1).jpg" class="card-img-top" alt="Nome do Relógio"
+                                    loading="lazy">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Nome do Relógio</h5>
+                                    <p class="text-muted small mb-2">Categoria</p>
+                                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                                        <span class="fw-bold fs-5">R$ 9.999,00</span>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="1">
+                                    <i class="fas fa-shopping-cart me-2"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <a href="/api/produtos" class="btn btn-lg btn-outline-dark rounded-pill border-2" data-page="catalog">
+                            Ver Todos os Produtos
+                        </a>
+                    </div>
+                </section>
+
+                
+
+            <!-- CATÁLOGO DE PRODUTOS -->
             <section id="catalogPageContent" class="container-lg my-5 px-4">
                 <h1 class="mb-4">Catálogo de Produtos</h1>
                 <p class="lead muted-text">Descubra a arte da precisão em nossos designs exclusivos, com imagens geradas
