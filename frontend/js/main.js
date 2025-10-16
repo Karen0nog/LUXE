@@ -4,7 +4,7 @@ function criarCardProduto(produto) {
   const imagem = produto.image || "./assets/img/relogio(1).jpg";
   const nome = produto.name || "Produto";
   const categoria = produto.category || "";
-  const preco = Number(produto.price || 0).toFixed(2);
+  const preco = formatarPreco(Number(produto.price || 0));
   const id = produto._id || "";
 
   return `
@@ -31,6 +31,13 @@ function criarCardProduto(produto) {
       </div>
     </div>
   `;
+}
+
+function formatarPreco(valor) {
+  return valor
+    .toFixed(2) 
+    .replace('.', ',') 
+    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); 
 }
 
 function renderFeaturedProducts(produtos) {
