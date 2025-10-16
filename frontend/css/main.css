@@ -2,6 +2,7 @@
 @import url("./hero.css");
 @import url("./footer.css");
 
+
 :root {
 --white: #ffffff;
 --main-bg-color: #f5f5f5;
@@ -56,7 +57,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-bg-color);
   font-family: var(--bs-body-font-family);
-  min-height: 100vh;
+ min-height: 100vh;
 }
 
 h1,
@@ -65,6 +66,8 @@ h3,
 h4 {
   font-weight: 700;
 }
+
+
 .hidden-sm {
   display: none;
 }

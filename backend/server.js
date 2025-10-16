@@ -1,6 +1,6 @@
-require("dotenv").config();
+const path = require("path"); 
+require("dotenv").config({ path: path.resolve(__dirname, '..', '.env') }); 
 const express = require("express");
-const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3000;
 
 // --- Conexão com o MongoDB Atlas ---
 const DB_URI = process.env.DB_URI;
-const API_URL = "http://localhost:3000/api/produtos"; 
 
 if (!DB_URI) {
   console.error("Erro: A variável de ambiente DB_URI não está definida.");
@@ -58,23 +57,23 @@ app.get("/catalogo", (req, res) => {
   res.sendFile(path.join(frontendPath, "catalogo.html"));
 });
 
-app.get("/api/produtos", (req, res) => {
-  res.json([
-    {
-      _id: "1",
-      name: "Relógio Clássico",
-      category: "Luxo",
-      price: 1999.99,
-      image: "./assets/img/relogio1.jpg",
-    },
-    {
-      _id: "2",
-      name: "Relógio Moderno",
-      category: "Casual",
-      price: 1299.99,
-      image: "./assets/img/relogio2.jpg",
-    },
-  ]);
+app.get("/api/produtos", async (req, res) => {
+  try {
+    const produtos = await Produto.find().lean().select("-__v");
+    
+    const mapped = produtos.map(produto => {
+      let image = produto.image;
+      produto.image = (image && (image.startsWith('http') || image.startsWith('https')))
+        ? image
+        : image ? `/${image}` : "";
+      return produto;
+    });
+
+    return res.json(mapped);
+  } catch (error) {
+    console.error("Erro ao buscar produtos:", error);
+    return res.status(500).json({ error: "Erro ao buscar produto" });
+  }
 });
 
 async function startServer() {
