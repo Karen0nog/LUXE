@@ -83,11 +83,9 @@ app.get("/api/produtos", async (req, res) => {
 
 async function startServer() {
   try {
-    // Conecta ao MongoDB usando a variável de ambiente DB_URI
     await mongoose.connect(DB_URI);
     console.log("Conectado ao MongoDB.");
 
-    // Inicia o servidor Express
     app.listen(PORT, () => {
       console.log(`Servidor rodando em http://localhost:${PORT}`);
     });

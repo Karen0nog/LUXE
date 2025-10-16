@@ -139,13 +139,12 @@
     var(--silver-200, #e6eaec)
   );
   box-shadow: 0 6px 18px var(--background),
-    inset 0 1px 0 var(--);
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   transform: translateY(0) scale(1);
   transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1),
     box-shadow 260ms cubic-bezier(0.2, 0.9, 0.3, 1), border-color 200ms ease;
   position: relative;
   overflow: hidden;
-  
 }
 
 /* Responsividade */
@@ -166,7 +165,6 @@
   }
 }
 
-/* Responsividade */
 @media (min-width: 768px) {
   .hero-section {
     height: 700px;

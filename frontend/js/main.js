@@ -1,11 +1,9 @@
 const URL_API = "http://localhost:3000/api/produtos";
 
 function criarCardProduto(produto) {
-  const imagem = produto.image || "./assets/img/relogio(1).jpg";
+  const imagem = produto.image;
   const nome = produto.name || "Produto";
   const categoria = produto.category || "";
-  const preco = formatarPreco(Number(produto.price || 0));
-  const id = produto._id || "";
 
   return `
     <div class="col-6 col-md-4 col-lg-3 catalog-card" data-name="${nome}">
@@ -18,13 +16,6 @@ function criarCardProduto(produto) {
       </div>
     </div>
   `;
-}
-
-function formatarPreco(valor) {
-  return valor
-    .toFixed(2)
-    .replace(".", ",")
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function renderFeaturedProducts(produtos) {
@@ -80,14 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (switchInput) {
-    switchInput.addEventListener('change', function () {
+    switchInput.addEventListener("change", function () {
       const isDark = switchInput.checked;
-      document.body.classList.toggle('dark-mode', isDark);
-      document.querySelectorAll('.custom-navbar, .custom-footer, .card').forEach(element => {
-        element.classList.toggle('dark-mode', isDark);
-      });
-      localStorage.setItem('darkMode', isDark);
+      document.body.classList.toggle("dark-mode", isDark);
+      document
+        .querySelectorAll(".custom-navbar, .custom-footer, .card")
+        .forEach((element) => {
+          element.classList.toggle("dark-mode", isDark);
+        });
+      localStorage.setItem("darkMode", isDark);
     });
   }
 });
- 

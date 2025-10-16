@@ -29,9 +29,9 @@ function criarCardProduto(produto) {
 
 function formatarPreco(valor) {
   return valor
-    .toFixed(2) // duas casas decimais
-    .replace(".", ",") // vírgula para decimal
-    .replace(/\B(?=(\d{3})+(?!\d))/g, "."); // ponto para milhar
+    .toFixed(2) 
+    .replace(".", ",") 
+    .replace(/\B(?=(\d{3})+(?!\d))/g, "."); 
 }
 
 async function renderizarCatalogo() {
@@ -88,8 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.target.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> Adicionar';
       }
     }
-  });
-});
+  });});
 
 document.addEventListener("DOMContentLoaded", function () {
   const switchInput = document.querySelector("#toggleDarkModeSwitch");
