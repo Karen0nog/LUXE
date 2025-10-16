@@ -1,5 +1,5 @@
-const path = require("path"); 
-require("dotenv").config({ path: path.resolve(__dirname, '..', '.env') }); 
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "..", ".env") });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -46,7 +46,7 @@ const ProdutoSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Produto = mongoose.model("Produto", ProdutoSchema);
+const Produto = mongoose.model("Produto", ProdutoSchema, "produtos"); 
 
 // Rotas
 app.get("/", (req, res) => {
@@ -60,16 +60,21 @@ app.get("/catalogo", (req, res) => {
 app.get("/api/produtos", async (req, res) => {
   try {
     const produtos = await Produto.find().lean().select("-__v");
-    
-    const mapped = produtos.map(produto => {
-      let image = produto.image;
-      produto.image = (image && (image.startsWith('http') || image.startsWith('https')))
-        ? image
-        : image ? `/${image}` : "";
-      return produto;
+
+    const mapped = produtos.map((produto) => {
+      const image = produto.image;
+
+      const finalImage =
+        image && (image.startsWith("http") || image.startsWith("https"))
+          ? image
+          : image
+          ? `/${image}`
+          : "";
+      return { ...produto, image: finalImage };
     });
 
     return res.json(mapped);
+
   } catch (error) {
     console.error("Erro ao buscar produtos:", error);
     return res.status(500).json({ error: "Erro ao buscar produto" });
