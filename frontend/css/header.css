@@ -67,6 +67,20 @@
   border: 2px solid var(--main-bg-color);
 }
 
+.form-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; 
+}
+
+.form-switch .form-check-label {
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+    font-weight: 500;
+    color: var(--main-text-color);
+    letter-spacing: 0.5px;
+}
+
 /* Menu Mobile */
 .mobile-menu {
   background-color: var(--secondary-bg-color);
@@ -104,6 +118,17 @@
     top: -5px;
     right: -5px;
   }
+  
+  .form-switch .form-check-label {
+        display: none; 
+    }
+    .form-switch {
+        margin-left: 0.5rem;
+    }
+    .form-switch .form-check-input {
+        width: 2rem;
+        height: 1rem;
+    }
 }
 
 @media (max-width: 480px) {

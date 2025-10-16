@@ -2,49 +2,54 @@
 @import url("./hero.css");
 @import url("./footer.css");
 
-
 :root {
---white: #ffffff;
---main-bg-color: #f5f5f5;
---footer-bg-color: #0f1720;
---secondary-bg-color: #eceff1;
---main-text-color: #22262a;
---muted-text: rgba(0, 3, 5, 0.9);
---accent-color: #b4b6b8;
---accent-contrast: #0f1720;
---accent-10: rgba(180, 182, 184, 0.08);
---brand-gray: #a0a4a8;
---silver-100: #f5f7f8;
---silver-200: #e6eaec;
---silver-300: #d1d7db;
---silver-400: #bfc6cc;
---silver-500: #9aa1a6;
---silver-600: #7d8489;
---silver-700: #5c6165;
+  --white: #ffffff;
+  --main-bg-color: #f5f5f5;
+  --footer-bg-color: #0f1720;
+  --secondary-bg-color: #eceff1;
+  --main-text-color: #22262a;
+  --muted-text: rgba(0, 3, 5, 0.9);
+  --accent-color: #b4b6b8;
+  --accent-contrast: #0f1720;
+  --accent-10: rgba(180, 182, 184, 0.08);
+  --brand-gray: #a0a4a8;
+  --silver-100: #f5f7f8;
+  --silver-200: #e6eaec;
+  --silver-300: #d1d7db;
+  --silver-400: #bfc6cc;
+  --silver-500: #9aa1a6;
+  --silver-600: #7d8489;
+  --silver-700: #5c6165;
 
---text-shadow: 0 6px 18px rgba(15, 23, 32, 0.25);
---text-shadow-strong: 0 8px 22px rgba(8,10,12,0.65);
---primary-shadow: 0 4px 12px rgba(15, 23, 32, 0.06);
---secondary-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
---card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
---hero-overlay: rgba(15, 23, 32, 0.45);
---hero-overlay-dark: rgba(12,14,16,0.66);
---hero-overlay-mid: rgba(28,32,36,0.44);
+  --text-shadow: 0 6px 18px rgba(15, 23, 32, 0.25);
+  --text-shadow-strong: 0 8px 22px rgba(8, 10, 12, 0.65);
+  --primary-shadow: 0 4px 12px rgba(15, 23, 32, 0.06);
+  --secondary-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --hero-overlay: rgba(15, 23, 32, 0.45);
+  --hero-overlay-dark: rgba(12, 14, 16, 0.66);
+  --hero-overlay-mid: rgba(28, 32, 36, 0.44);
 
---primary-border: rgba(255, 255, 255, 0.1);
---secondary-border: rgba(255, 255, 255, 0.5);
---hero-cta-border: rgba(255,255,255,0.45);
+  --primary-border: rgba(255, 255, 255, 0.1);
+  --secondary-border: rgba(255, 255, 255, 0.5);
+  --hero-cta-border: rgba(255, 255, 255, 0.45);
 
---background:rgba(255, 255, 255, 0.08);
---background-primary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
---background-secondary-gradient: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.98) 100%);
---hero-cta-bg: linear-gradient(180deg, var(--silver-100), var(--silver-300));
---hero-cta-hover: linear-gradient(180deg, #ffffff, var(--silver-200));
+  --background: rgba(255, 255, 255, 0.08);
+  --background-primary-gradient: linear-gradient(
+    180deg,
+    var(--white) 0%,
+    rgba(255, 255, 255, 0.98) 100%
+  );
+  --background-secondary-gradient: linear-gradient(
+    180deg,
+    var(--white) 0%,
+    rgba(255, 255, 255, 0.98) 100%
+  );
+  --hero-cta-bg: linear-gradient(180deg, var(--silver-100), var(--silver-300));
+  --hero-cta-hover: linear-gradient(180deg, #ffffff, var(--silver-200));
 
-
---nav-link-padding: 0.4rem 0.75rem;
---hero-cta-color: #0b0b0b;
-
+  --nav-link-padding: 0.4rem 0.75rem;
+  --hero-cta-color: #0b0b0b;
 }
 
 * {
@@ -57,7 +62,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-bg-color);
   font-family: var(--bs-body-font-family);
- min-height: 100vh;
+  min-height: 100vh;
 }
 
 h1,
@@ -67,7 +72,151 @@ h4 {
   font-weight: 700;
 }
 
-
 .hidden-sm {
   display: none;
 }
+
+/* Modo Escuro  */
+
+body.dark-mode {
+  background: var(--accent-contrast);
+  color: var(--white);
+}
+.custom-navbar.dark-mode,
+.custom-footer.dark-mode {
+  background: var(--accent-contrast);
+  color: var(--white);
+}
+
+.card.dark-mode {
+  background: var(--brand-gray);
+  color: var(--white);
+}
+
+body.dark-mode a,
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand {
+  color: var(--white) !important;
+}
+
+body.dark-mode a:hover,
+body.dark-mode .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+body.dark-mode .custom-navbar {
+  border-top: 6px solid #111 !important;
+  margin-bottom: 0 !important;
+}
+
+body.dark-mode .form-check-input {
+  background-color: var(--accent-contrast) !important;
+  border-color: var(--silver-700) !important;
+}
+
+body.dark-mode .form-check-input:checked {
+  background-color: var(--main-text-color) !important;
+  border-color: var(--silver-700) !important;
+}
+
+body.dark-mode .form-check-label {
+  color: var(--white) !important;
+}
+
+body.dark-mode .btn,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-outline-secondary {
+  color: var(--white);
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-outline-secondary:hover {
+  color: var(--white);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: var(--accent-contrast);
+  color: var(--white);
+  border-color: var(--silver-700);
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: var(--silver-500);
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: var(--accent-contrast);
+  color: var(--white);
+  border-color: var(--silver-700);
+}
+
+body.dark-mode .section-beneficios h3,
+body.dark-mode .section-beneficios p,
+body.dark-mode .section-beneficios .feature-icon,
+body.dark-mode .section-beneficios .muted-text,
+body.dark-mode .section-beneficios .text-black {
+  color: var(--white) !important;
+}
+
+body.dark-mode .section-beneficios .feature-icon {
+  color: var(--main-text-color) !important;
+}
+
+body.dark-mode .mais-vendidos-section {
+  background: var(--main-text-color);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+body.dark-mode .mais-vendidos-section h2 {
+  color: var(--white) !important;
+}
+
+body.dark-mode .mais-vendidos-section p.muted-text.text-black,
+body.dark-mode .mais-vendidos-section .muted-text,
+body.dark-mode .mais-vendidos-section .text-black {
+  color: var(--white) !important;
+}
+
+body.dark-mode .mais-vendidos-section .btn-outline-dark {
+  background: transparent;
+  color: var(--white) !important;
+  border-color: var(--white) !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark-mode .mais-vendidos-section .btn-outline-dark:hover,
+body.dark-mode .mais-vendidos-section .btn-outline-dark:focus {
+  background: var(--white) !important;
+  color: var(--main-text-color) !important;
+  border-color: var(--white) !important;
+}
+
+body.dark-mode .social-icon-container,
+body.dark-mode .social-icon-container:hover,
+body.dark-mode .social-icon-container:focus {
+  color: var(--white) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+body.dark-mode .about-container {
+  background: var(--main-text-color);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+body.dark-mode .about-container h1,
+body.dark-mode .about-container h2,
+body.dark-mode .about-container p {
+  color: var(--white) !important;
+}
+
+
+

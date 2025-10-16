@@ -90,3 +90,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const switchInput = document.querySelector("#toggleDarkModeSwitch");
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    document
+      .querySelectorAll(".custom-navbar, .custom-footer, .card")
+      .forEach((element) => {
+        element.classList.add("dark-mode");
+      });
+    if (switchInput) switchInput.checked = true;
+  }
+
+  if (switchInput) {
+    switchInput.addEventListener('change', function () {
+      const isDark = switchInput.checked;
+      document.body.classList.toggle('dark-mode', isDark);
+      document.querySelectorAll('.custom-navbar, .custom-footer, .card').forEach(element => {
+        element.classList.toggle('dark-mode', isDark);
+      });
+      localStorage.setItem('darkMode', isDark);
+    });
+  }
+});
+ 

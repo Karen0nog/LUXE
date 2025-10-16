@@ -22,9 +22,9 @@ function criarCardProduto(produto) {
 
 function formatarPreco(valor) {
   return valor
-    .toFixed(2) 
-    .replace('.', ',') 
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); 
+    .toFixed(2)
+    .replace(".", ",")
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function renderFeaturedProducts(produtos) {
@@ -40,7 +40,7 @@ function renderFeaturedProducts(produtos) {
       '<div class="col-12 text-center text-muted">Nenhum produto em destaque.</div>';
     return;
   }
-  // Gera o HTML dos produtos em destaque e insere no container
+
   let html = "";
   for (let i = 0; i < featured.length; i++) {
     html += criarCardProduto(featured[i]);
@@ -61,7 +61,33 @@ async function fetchProducts() {
   }
 }
 
-// Aguarda o carregamento da página para iniciar
 document.addEventListener("DOMContentLoaded", function () {
   fetchProducts();
 });
+
+// Alterar para modo escuro
+
+document.addEventListener("DOMContentLoaded", function () {
+  const switchInput = document.querySelector("#toggleDarkModeSwitch");
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    document
+      .querySelectorAll(".custom-navbar, .custom-footer, .card")
+      .forEach((element) => {
+        element.classList.add("dark-mode");
+      });
+    if (switchInput) switchInput.checked = true;
+  }
+
+  if (switchInput) {
+    switchInput.addEventListener('change', function () {
+      const isDark = switchInput.checked;
+      document.body.classList.toggle('dark-mode', isDark);
+      document.querySelectorAll('.custom-navbar, .custom-footer, .card').forEach(element => {
+        element.classList.toggle('dark-mode', isDark);
+      });
+      localStorage.setItem('darkMode', isDark);
+    });
+  }
+});
+ 
