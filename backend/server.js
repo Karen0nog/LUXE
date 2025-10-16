@@ -1,5 +1,6 @@
 const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "..", ".env") });
+require("dotenv").config({ path: path.join(__dirname, "..", ".env") }); 
+console.log("DB_URI COMPLETA (DEVE CONTER 'catalogoDB'):", process.env.DB_URI); 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -60,7 +61,7 @@ app.get("/catalogo", (req, res) => {
 app.get("/api/produtos", async (req, res) => {
   try {
     const produtos = await Produto.find().lean().select("-__v");
-
+   
     const mapped = produtos.map((produto) => {
       const image = produto.image;
 
