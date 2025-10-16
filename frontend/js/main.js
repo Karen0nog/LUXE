@@ -14,20 +14,7 @@ function criarCardProduto(produto) {
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${nome}</h5>
           <p class="text-muted small mb-2">${categoria}</p>
-          <div class="d-flex justify-content-between align-items-center mt-auto">
-            <span class="fw-bold fs-5">R$ ${preco}</span>
-            <div class="text-warning">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
         </div>
-        <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="${id}">
-          <i class="fas fa-shopping-cart me-2"></i> Adicionar
-        </button>
       </div>
     </div>
   `;

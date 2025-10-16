@@ -1,4 +1,4 @@
-const URL_API = "http://localhost:3000/api/produtos"; 
+const URL_API = "http://localhost:3000/api/produtos";
 
 function criarCardProduto(produto) {
   const imagem = produto.image || "./assets/img/relogio(1).jpg";
@@ -17,19 +17,11 @@ function criarCardProduto(produto) {
           <p class="text-muted small mb-2">${categoria}</p>
           <p class="card-text small mb-2">${descricao}</p> 
           <div class="d-flex justify-content-between align-items-center mt-auto">
-            <span class="fw-bold fs-5">R$ ${preco}</span>
-            <div class="text-warning">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-            </div>
+            <span class="fw-bold fs-6">R$ ${preco}</span>
           </div>
         </div>
         <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="${id}">
-          <i class="fas fa-shopping-cart me-2"></i> Adicionar
-        </button>
+          <i class="fas fa-shopping-cart me-2"></i> Adicionar</button>
       </div>
     </div>
   `;
@@ -38,8 +30,8 @@ function criarCardProduto(produto) {
 function formatarPreco(valor) {
   return valor
     .toFixed(2) // duas casas decimais
-    .replace('.', ',') // vírgula para decimal
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // ponto para milhar
+    .replace(".", ",") // vírgula para decimal
+    .replace(/\B(?=(\d{3})+(?!\d))/g, "."); // ponto para milhar
 }
 
 async function renderizarCatalogo() {
@@ -81,3 +73,20 @@ async function renderizarCatalogo() {
 }
 
 document.addEventListener("DOMContentLoaded", renderizarCatalogo);
+
+//Produto indisponível
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.addEventListener('click', function(e) {
+    if (e.target.matches('button[data-product-id]')) {
+      if (e.target.classList.contains('btn-primary')) {
+        e.target.classList.remove('btn-primary');
+        e.target.classList.add('btn-danger');
+        e.target.innerText = "Indisponível";
+      } else {
+        e.target.classList.remove('btn-danger');
+        e.target.classList.add('btn-primary');
+        e.target.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> Adicionar';
+      }
+    }
+  });
+});
