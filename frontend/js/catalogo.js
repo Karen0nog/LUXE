@@ -20,7 +20,7 @@ function criarCardProduto(produto) {
             <span class="fw-bold fs-6">R$ ${preco}</span>
           </div>
         </div>
-        <button class="btn btn-primary mt-3 w-100 rounded-pill" data-product-id="${id}">
+        <button class="btn btn-primary rounded-pill btn-sm mx-2 mb-2" style="width:90%;" data-product-id="${id}">
           <i class="fas fa-shopping-cart me-2"></i> Adicionar</button>
       </div>
     </div>

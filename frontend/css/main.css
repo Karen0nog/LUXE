@@ -82,10 +82,15 @@ body.dark-mode {
   background: var(--accent-contrast);
   color: var(--white);
 }
-.custom-navbar.dark-mode,
-.custom-footer.dark-mode {
+.custom-navbar.dark-mode {
   background: var(--accent-contrast);
   color: var(--white);
+  border-bottom: 1px solid var(--silver-700);
+}
+.custom-footer.dark-mode {
+  background: var(--accent-contrast);
+  border-top: 1px solid var(--silver-700);
+  margin-top: 1rem;
 }
 
 .card.dark-mode {
@@ -102,11 +107,6 @@ body.dark-mode .navbar-brand {
 body.dark-mode a:hover,
 body.dark-mode .nav-link:hover {
   color: var(--accent-color) !important;
-}
-
-body.dark-mode .custom-navbar {
-  border-top: 6px solid #111 !important;
-  margin-bottom: 0 !important;
 }
 
 body.dark-mode .form-check-input {
@@ -210,6 +210,7 @@ body.dark-mode .about-container {
   background: var(--main-text-color);
   border-radius: 12px;
   padding: 2rem;
+  margin-top: 1rem;
 }
 
 body.dark-mode .about-container h1,
@@ -218,5 +219,55 @@ body.dark-mode .about-container p {
   color: var(--white) !important;
 }
 
+body.dark-mode h1,
+body.dark-mode .lead {
+  color: var(--white) !important;
+  text-shadow: var(--text-shadow);
+}
 
+body.dark-mode #catalogProductsContainer {
+  background: var(--main-text-color);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+}
+
+body.dark-mode #catalogProductsContainer .card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: none;
+  color: var(--main-text-color);
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark-mode #catalogProductsContainer .card-title,
+body.dark-mode #catalogProductsContainer .card-text,
+body.dark-mode #catalogProductsContainer .text-muted,
+body.dark-mode #catalogProductsContainer .muted-text,
+body.dark-mode #catalogProductsContainer .text-black {
+  color: var(--main-text-color) !important;
+}
+
+body.dark-mode #catalogProductsContainer .feature-icon {
+  color: var(--main-text-color) !important;
+}
+
+body.dark-mode #catalogProductsContainer .btn-outline-dark {
+  background: transparent;
+  color: var(--main-text-color) !important;
+  border-color: var(--main-text-color) !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark-mode #catalogProductsContainer .btn-outline-dark:hover,
+body.dark-mode #catalogProductsContainer .btn-outline-dark:focus {
+  background: var(--main-text-color) !important;
+  color: var(--white) !important;
+  border-color: var(--main-text-color) !important;
+}
+
+body.dark-mode #catalogLoadingMessage {
+  color: var(--silver-500) !important;
+}
 
