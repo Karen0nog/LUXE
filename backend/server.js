@@ -1,6 +1,5 @@
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") }); 
-console.log("DB_URI COMPLETA (DEVE CONTER 'catalogoDB'):", process.env.DB_URI); 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
