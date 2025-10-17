@@ -2,23 +2,24 @@
 
 ## 🌟 Visão Geral do Projeto
 
-**LUXE** é um catálogo de e-commerce Full Stack para relógios de luxo conceituais, projetado para demonstrar o domínio da arquitetura web moderna. O projeto utiliza um design minimalista e responsivo (criado com Bootstrap) e apresenta dados complexos (produtos com variações e filtros) gerenciados por uma API RESTful.
+**LUXE** é um **catálogo de luxo conceitual** para relógios, projetado para demonstrar o domínio da arquitetura web moderna. O projeto utiliza um design minimalista e responsivo (criado com Bootstrap) e produtos com descrição gerenciados por uma API RESTful.
 
+> **Nota:** Neste estágio inicial, o projeto funciona estritamente como um catálogo de visualização. A funcionalidade de "Adicionar ao Carrinho" será implementada em futuras iterações para transformá-lo em um e-commerce Full Stack completo.
+ 
 
 ## 🛠️ Stack Tecnológico
 
-Este projeto foi construído utilizando a seguinte pilha de tecnologias Full Stack:
+Este projeto foi construído utilizando as seguintes tecnologias Full Stack:
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap,express,mongodb)](https://skillicons.dev)
 
 
+## 📈 Próximos Passos & Evolução
 
-## 🚀 Funcionalidades Principais
-
-* **Filtragem Avançada:** Capacidade de filtrar o catálogo por:
-    * Material da Pulseira (Couro, Metal, Silicone)
-    * Cor do Mostrador (Azul, Preto, Branco)
-    * Tipo de Movimento (Automático, Quartzo)
-* **Busca:** Funcionalidade de pesquisa por nome do relógio.
-
+Estou muito animada para continuar aprendendo! Este é apenas o primeiro passo na minha jornada Full Stack. No futuro, pretendo atualizar este projeto para incluir:
+* Funcionalidades de e-commerce (ex: "Adicionar ao Carrinho").
+* Autenticação de Usuários.
+* Página de Checkout.
 
 ## 🔗 Deploy e Acesso Online
 
@@ -29,7 +30,4 @@ O projeto está disponível online no seguinte endereço:
 ## ✍️ Autor
 
 Este projeto foi desenvolvido por:
-
-* **[Seu Nome Completo]**
-* **GitHub:** [@SeuUsername]
-* **LinkedIn:** [Seu Link do LinkedIn]
+**Karen0nog**
