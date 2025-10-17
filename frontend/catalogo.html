@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos | LUXE</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <section class="header">
+        <nav class="navbar navbar-expand-md custom-navbar shadow" id="mainNavbar">
+            <div class="container-fluid container-lg px-4">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center me-auto me-md-4" href="index.html">
+                    <div class="logo-circle me-2">
+                        <span>L</span>
+                    </div>
+                    <span class="fs-4 fw-light text-uppercase tracking-wider">LUXE</span>
+                </a>
+                <!-- MENU -->
+                <div class="d-flex align-items-center order-md-last">
+                    <button class="btn icon-btn p-2 me-2" aria-label="Buscar Produto">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn icon-btn p-2 position-relative" aria-label="Carrinho de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </button>
+                    <button class="d-md-none p-2 ms-3 icon-btn" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation" id="mobileMenuToggle">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="form-check form-switch ms-3">
+                        <input class="form-check-input" type="checkbox" id="toggleDarkModeSwitch">
+                        <label class="form-check-label" for="toggleDarkModeSwitch">Modo Escuro</label>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom nav-link-active" href="index.html"
+                                data-page="home">Home</a>
+                        </li>
+                        <li class="nav-item hidden-sm">
+                            <a class="nav-link nav-link-custom" href="#catalogPageContent"
+                                data-page="catalog">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="sobre.html" data-page="about">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#contatoFooter" data-page="contact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <main class="container my-5 flex-grow-1">
+        <h1 class="mb-4">Catálogo de Produtos</h1>
+        <p class="lead">Explore nossa coleção de relógios de luxo.</p>
+
+        <div id="catalogProductsContainer" class="row g-4">
+            <div class="col-12 text-center text-muted" id="catalogLoadingMessage">Carregando produtos...</div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer text-white py-5">
+        <div class="container-lg px-4">
+            <div class="row g-5 g-md-4">
+                <div class="col-12 col-md-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-circle me-2">
+                            <span class="text-white">L</span>
+                        </div>
+                        <span class="fs-4 fw-light text-uppercase tracking-wider"
+                            style="letter-spacing: 2px;">LUXE</span>
+                    </div>
+                    <p class="muted-text text-sm" style="font-size: 0.875rem;">
+                        Relógios de luxo que combinam artesanato excepcional com design atemporal.
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <h4 class="h5 mb-4 fw-bold">Links Úteis</h4>
+                    <div class="d-flex flex-column" style="gap: 8px;">
+                        <a href="sobre.html" class="footer-link">Sobre Nós</a>
+                        <a href="catalogo.html" class="footer-link">Catálogo</a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <h4 class="h5 mb-4 fw-bold">Atendimento</h4>
+                    <div class="d-flex flex-column" style="gap: 8px;">
+                        <a href="#contatoFooter" class="footer-link">Contato</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Política de Devolução</a>
+                        <a href="#" class="footer-link">Garantia</a>
+                    </div>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="col-12 col-md-3">
+                    <h4 class="h5 mb-4 fw-bold">Siga-nos</h4>
+                    <div class="d-flex gap-3">
+
+                        <a href="#" class="social-icon-container" aria-label="Facebook">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="social-icon-container" aria-label="Instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="social-icon-container" aria-label="Twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="social-icon-container" aria-label="Youtube">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4" id="contatoFooter">
+                        <h4 class="h5 mb-3 fw-bold">Contato</h4>
+                        <p class="mb-1"><i class="fas fa-phone me-2"></i>(11) 99999-9999</p>
+                        <p class="mb-1"><i class="fas fa-envelope me-2"></i>contato@luxerelogios.com</p>
+                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Av. Paulista, 1000 - São Paulo, SP</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary mt-5 pt-4 text-center"
+                style="border-color: rgba(255, 255, 255, 0.1) !important;">
+                <p class="mb-0 text-white" style="font-size: 0.875rem;">© 2025 LUXE. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/catalogo.js"></script>
+</body>
+
+</html>

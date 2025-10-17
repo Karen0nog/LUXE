@@ -1,0 +1,124 @@
+.custom-footer {
+  background-color: var(--footer-bg-color);
+  padding: 2rem 1rem;
+  color: var(--silver-200);
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-circle {
+  background-color: var(--accent-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent-contrast);
+  font-size: 1rem;
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--accent-color);
+  text-decoration: none;
+  outline: none;
+}
+
+.muted-text {
+  color: var(--white);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.social-icon-container {
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-contrast);
+  transition: background-color 0.25s ease, color 0.2s ease, transform 0.12s ease,
+    filter 0.2s;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border: none;
+  vertical-align: middle;
+}
+
+.social-icon-container:hover,
+.social-icon-container:focus {
+  filter: brightness(0.92);
+  color: var(--white);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.social-icon-container:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06), 0 0 0 5px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .custom-footer {
+    padding: 1.5rem 0.75rem;
+    font-size: 0.92rem;
+  }
+
+  .logo-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .social-icon-container {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .custom-footer > * {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .social-icon-container {
+    width: 34px;
+    height: 34px;
+    margin-right: 0.5rem;
+  }
+
+  .footer-link {
+    padding: 8px 0;
+    display: inline-block;
+  }
+
+  .muted-text {
+    font-size: 0.85rem;
+  }
+}
