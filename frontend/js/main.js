@@ -1,4 +1,4 @@
-const URL_API = "http://localhost:3000/api/produtos";
+const URL_API = "/api/produtos";
 
 function criarCardProduto(produto) {
   const imagem = produto.image;
