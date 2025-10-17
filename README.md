@@ -25,7 +25,7 @@ Estou muito animada para continuar aprendendo! Este é apenas o primeiro passo n
 
 O projeto está disponível online no seguinte endereço:
 
-* **URL do Projeto:** [INSIRA O LINK DO SEU DEPLOY AQUI (Ex: Vercel, Heroku, Netlify)]
+* **URL do Projeto:** https://luxe-eight-iota.vercel.app/index.html
 
 ## ✍️ Autor
 
